@@ -17,10 +17,10 @@ export class AppComponent {
 
   title = 'recipe';
 
-  ngOnInit() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
-    function ngOnInit() {
-      throw new Error('Function not implemented.');
-    }
-}
+//   ngOnInit() {
+//     this.toastr.success('Hello world!', 'Toastr fun!');
+//     function ngOnInit() {
+//       throw new Error('Function not implemented.');
+//     }
+// }
 }
