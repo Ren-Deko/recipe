@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormArray, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './create.component.html',
   styleUrl: './create.component.css'
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
   
   recipeForm: FormGroup;
 
@@ -25,6 +25,11 @@ export class CreateComponent {
     // Add the initial input fields
     this.addIngredient();
     this.addDirection();
+
+    for (let i = 0; i < 3; i++) {
+      this.addDirection();
+    }
+
   }
 
   get ingredients() {
@@ -60,4 +65,10 @@ export class CreateComponent {
     // Show toast notification
     this.toastr.success('Recipe Added');
   }
-}
+
+  ngOnInit() {
+    // Initialize with 3 direction steps
+    for (let i = 0; i < 3; i++) {
+      this.addDirection();
+    }
+}}

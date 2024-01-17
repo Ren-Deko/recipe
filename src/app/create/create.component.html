@@ -33,13 +33,14 @@
 
         <!-- Directions -->
         <div formArrayName="directions">
-            <label for="directions">Directions:</label>
+            <label>Directions:</label>
             <div *ngFor="let direction of directions.controls; let i = index" class="form-group">
-                <input type="text" [formControlName]="i" class="form-control" placeholder="eg. step1. Preheat oven to 180° celsius" required>
-                <button type="button" class="btn btn-danger" (click)="removeDirection(i)">Remove</button>
+              <label for="direction{{i}}">Step {{i + 1}}.</label>
+              <input type="text" [formControlName]="i" class="form-control" placeholder="Enter step {{i + 1}}" required>
+              <button type="button" class="btn btn-danger" (click)="removeDirection(i)">Remove</button>
             </div>
             <button type="button" class="btn btn-success" (click)="addDirection()">Add Direction</button>
-        </div>
+          </div>
 
         <!-- Servings, Prep Time, Cook Time -->
         <div class="form-row">
