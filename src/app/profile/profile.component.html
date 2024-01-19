@@ -14,11 +14,16 @@
           </div>
           <!-- Navigation links -->
           <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link active" href="#">Personal Info</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Newsletter Preferences</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Saved Items</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Recipes</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="personal">Personal Info</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="newsletter">Newsletter Preferences</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="saved">Saved Items</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="myrecipes">Recipes</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="reviews">Reviews</a></li>
           </ul>
         </div>
       </div>
+
+  <!-- Main Body -->
+<div class="col-md-9">
+  <router-outlet></router-outlet>
+</div>
