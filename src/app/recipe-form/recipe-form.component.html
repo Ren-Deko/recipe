@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="recipeName" placeholder="Recipe Name" required>
+    <textarea formControlName="recipeDescription" placeholder="Recipe Description" required></textarea>
+    <select formControlName="recipeDifficulty" required>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button type="submit" [disabled]="recipeForm.invalid">Add Recipe</button>
+   </form>
+   
