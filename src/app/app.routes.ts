@@ -10,7 +10,6 @@ import { SavedComponent } from './saved/saved.component';
 import { MyrecipesComponent } from './myrecipes/myrecipes.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 
-
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
