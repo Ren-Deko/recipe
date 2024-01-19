@@ -6,10 +6,10 @@
           <div class="text-center mb-3">
             <!-- Image upload and username -->
             <div class="mb-3">
-              <img src="path-to-default-image" class="img-fluid rounded-circle" alt="Profile">
-              <input type="file" class="form-control-file">
+              <img src="/assets/user.png" class="img-fluid rounded-circle" alt="Profile">
+              
             </div>
-            <h3 class="h3 mb-0"><strong>USERNAME</strong></h3>
+            <h3 class="h3 mb-0"><strong>userName</strong></h3>
             <hr>
           </div>
           <!-- Navigation links -->
@@ -22,24 +22,3 @@
           </ul>
         </div>
       </div>
-
-      <!-- Main content -->
-      <div class="col-md-9">
-        <h1>Personal Info</h1>
-        <form>
-          <!-- Email field (disabled) -->
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" class="form-control" value="{{ userEmail }}" disabled>
-          </div>
-          <!-- Username field -->
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" class="form-control" [(ngModel)]="username">
-          </div>
-          <!-- Save button -->
-          <button type="submit" class="btn btn-primary" (click)="saveUsername()">Save</button>
-        </form>
-      </div>
-    </div>
-  </div>
