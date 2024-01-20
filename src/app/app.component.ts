@@ -13,14 +13,20 @@ import { ToastrService } from 'ngx-toastr'
 })
 
 export class AppComponent {
+
+  isLoggedIn = false; // Track user login status
+
   constructor(private toastr: ToastrService) { }
 
   title = 'recipe';
 
-//   ngOnInit() {
-//     this.toastr.success('Hello world!', 'Toastr fun!');
-//     function ngOnInit() {
-//       throw new Error('Function not implemented.');
-//     }
-// }
+  login() {
+    this.isLoggedIn = true; // Simulate user login
+    this.toastr.success('Logged In'); // Show toastr message
+  }
+
+  logout() {
+    this.isLoggedIn = false;
+    this.toastr.info('Logged Out');
+  }
 }
