@@ -46,16 +46,21 @@
 
       <!-- Login & Sign up -->
       <div class="navbar-nav ms-auto">
+        <a *ngIf="!isLoggedIn" class="nav-link" href="#" (click)="login()">Login</a>
+        <span *ngIf="!isLoggedIn" style="margin: 5px 5px;">|</span>
+        <a *ngIf="!isLoggedIn" class="nav-link" href="#" style="margin-right: 5px;">Sign Up</a> 
+      </div>
+
+      <div *ngIf="isLoggedIn" class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user"></i>
             My Account
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">My Profile</a></li>
-            <li><a class="dropdown-item" href="#">Saved Items</a></li>
             <li><a class="dropdown-item" routerLink="/recipe" routerLinkActive="active">Add Recipe</a></li>
+            <li><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
           </ul>
         </li>
       </div>
