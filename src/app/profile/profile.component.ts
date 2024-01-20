@@ -14,8 +14,6 @@ import { filter } from 'rxjs/operators';
 })
 
 export class ProfileComponent {
-  username = 'user123';
-  userEmail = 'user@example.com';
 
   loading = false;
 
