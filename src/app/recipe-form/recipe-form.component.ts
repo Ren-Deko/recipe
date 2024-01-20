@@ -1,34 +1,57 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import axios from 'axios';
 
+
 @Component({
- selector: 'app-recipe-form',
- templateUrl: './recipe-form.component.html',
+    selector: 'app-recipe-form',
+    templateUrl: './recipe-form.component.html',
+    styleUrls: ['./recipe-form.component.css'],
+    standalone: true
 })
-export class RecipeFormComponent implements OnInit {
- recipeForm!: FormGroup;
+export class RecipeFormComponent {
+    recipeName = '';
+    recipeDescription = '';
+    recipeDifficulty = '';
 
- constructor(private formBuilder: FormBuilder) { }
+    onInput(event: Event) {
+        const target = event.target as HTMLInputElement;
+        this.recipeName = target.value;
+    }
 
- ngOnInit() {
-   this.recipeForm = this.formBuilder.group({
-     recipeName: ['', Validators.required],
-     recipeDescription: ['', Validators.required],
-     recipeDifficulty: ['', Validators.required]
-   });
- }
+    onTextareaInput(event: Event) {
+        const target = event.target as HTMLTextAreaElement;
+        this.recipeDescription = target.value;
+    }
 
- onSubmit() {
-   if (this.recipeForm.valid) {
-     const formData = this.recipeForm.value;
-     axios.post('http://localhost:8000/recipe', formData)
-       .then(response => {
-         console.log("Recipe Added Successfully");
-       })
-       .catch(error => {
-         console.error(error);
-       });
-   }
- }
+    onSelectChange(event: Event) {
+        const target = event.target as HTMLSelectElement;
+        this.recipeDifficulty = target.value;
+    }
+
+    onSubmit() {
+        console.log("onSubmit() was called");
+        if (this.recipeName && this.recipeDescription && this.recipeDifficulty) {
+            const formData = {
+                recipeName: this.recipeName,
+                recipeDescription: this.recipeDescription,
+                recipeDifficulty: this.recipeDifficulty
+            };
+            axios.post('http://localhost:8000/recipe', formData)
+                .then(response => {
+                    console.log("Recipe Added Successfully");
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    }
 }
+
+
+
+
+
+
+
+
+

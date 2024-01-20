@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container-fluid">
     <!-- Logo or brand name -->
-    <a class="navbar-brand" href="#">Your Logo</a>
+    <a class="navbar-brand" routerLink="" routerLinkActive="active">Your Logo</a>
 
     <!-- Toggler for mobile view -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">My Profile</a></li>
             <li><a class="dropdown-item" routerLink="/recipe" routerLinkActive="active">Add Recipe</a></li>
-            <li><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
+            <li><a class="dropdown-item" routerLink="" routerLinkActive="active" (click)="logout()">Logout</a></li>
           </ul>
         </li>
       </div>
