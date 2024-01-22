@@ -1,163 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Include this HTML in your about.component.html file -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Your Site Name</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: #007BFF;
-        }
-
-        article {
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #007BFF;
-            color: #fff;
-        }
-    </style>
-
-</head>
-
-<body>
+<div class="container">
 
     <header>
-        <h1>About Us</h1>
+      <h1>Welcome to CodeCowboys Recipes</h1>
+      <p>Discover, Share, and Enjoy Delicious Recipes</p>
     </header>
-
-    <section id="team">
-        <h2>Meet the Team</h2>
-
-        <article>
-            <img src="https://media.licdn.com/dms/image/C4D03AQEmLsKe-rzA-A/profile-displayphoto-shrink_800_800/0/1641203198745?e=1710979200&v=beta&t=wffvOZRlgdxMqH19E0yybFuWbtCsJiGtIEAbyC7T0Y8" width="200" height="200" >
+    <section id="team" class="small-member-cards">
+        <article class="member-card-small">
+          <img src="https://media.licdn.com/dms/image/C4D03AQEmLsKe-rzA-A/profile-displayphoto-shrink_800_800/0/1641203198745?e=1710979200&v=beta&t=wffvOZRlgdxMqH19E0yybFuWbtCsJiGtIEAbyC7T0Y8" alt="Antonio Maggi">
+          <div class="member-info-small">
             <h3>Antonio Maggi</h3>
             <p><strong>Role:</strong> Full Stack Developer</p>
-            <p><a href="https://www.linkedin.com/in/antonio-maggi/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="30" height="30">
-            </a>
-            <a href="https://github.com/AntonioMaggi" target="_blank">
-                <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" width="50" height="30">
-            </a>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/antonio-maggi/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+              </a>
+              <a href="https://github.com/AntonioMaggi" target="_blank">
+                <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" alt="GitHub" class="github-link">
+              </a>
+            </div>
+          </div>
         </article>
-
-        <article>
-            <img src="https://media.licdn.com/dms/image/D4E03AQGEyWEtsgzzfA/profile-displayphoto-shrink_800_800/0/1701159095258?e=1710979200&v=beta&t=OZXNC4g4kpC_R4aJPjBtqItwwhpqv63leTRGiby_tuw" width="200" height="200">
+    
+    
+        <article class="member-card-small">
+          <img src="https://media.licdn.com/dms/image/D4E03AQGEyWEtsgzzfA/profile-displayphoto-shrink_800_800/0/1701159095258?e=1710979200&v=beta&t=OZXNC4g4kpC_R4aJPjBtqItwwhpqv63leTRGiby_tuw" alt="Adam Gazdiev">
+          <div class="member-info-small">
             <h3>Adam Gazdiev</h3>
             <p><strong>Role:</strong> Full Stack Developer</p>
-            <p><a href="https://www.linkedin.com/in/adam-gazdiev/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="30" height="30">
-            </a>
-            <a href="https://github.com/Maysker" target="_blank">
-                <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" width="50" height="30">
-            </a>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/adam-gazdiev/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+              </a>
+              <a href="https://github.com/Maysker" target="_blank">
+                <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" alt="GitHub" class="github-link">
+              </a>
+            </div>
+          </div>
         </article>
-
-        <article>
-            <img src="https://media.licdn.com/dms/image/D5603AQFbgkPJm1GF-g/profile-displayphoto-shrink_800_800/0/1696233236465?e=1710979200&v=beta&t=CHOWHi-0EsFv5we_6xOXmQks1qE5PQoa0p5ePfK6mUU" width="200" height="200">
-            <h3>Renier Leenaers</h3>
-            <p><strong>Role:</strong> Full Stack Developer</p>
-            <p><a href="https://www.linkedin.com/in/renier-leenaers-50b1a8294/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="30" height="30">
-            </a>
-            <a href="https://github.com/Ren-Deko" target="_blank">
-                <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" width="50" height="30">
-            </a>
-        
-        </p>
-        </article>
-
+    
+        <article class="member-card-small">
+            <img src="https://media.licdn.com/dms/image/D5603AQFbgkPJm1GF-g/profile-displayphoto-shrink_800_800/0/1696233236465?e=1710979200&v=beta&t=CHOWHi-0EsFv5we_6xOXmQks1qE5PQoa0p5ePfK6mUU" alt="Renier Leenaers">
+            <div class="member-info-small">
+                <h3>Renier Leenaers</h3>
+                <p><strong>Role:</strong> Full Stack Developer</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/renier-leenaers-50b1a8294/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                  </a>
+                  <a href="https://github.com/Ren-Deko" target="_blank">
+                    <img src="https://banner2.cleanpng.com/20180824/jtl/kisspng-computer-icons-logo-portable-network-graphics-clip-icons-for-free-iconza-circle-social-5b7fe46b0bac53.1999041115351082030478.jpg" alt="GitHub">
+                  </a>
+              </div>
+            </div>
+          </article>
+  
     </section>
-
+  
     <section id="mission">
-        <h2>Our Mission</h2>
-        <p>at codecowboys, our mission is to create a community-driven space for food enthusiasts to share,
-            discover, and celebrate their love for cooking. Whether you're a seasoned chef or a kitchen newbie, this
-            platform is designed to make cooking an enjoyable and collaborative experience.</p>
+      <h2>Our Mission</h2>
+      <p>At CodeCowboys, our mission is to create a community-driven space for food enthusiasts to share,
+        discover, and celebrate their love for cooking. Whether you're a seasoned chef or a kitchen newbie, this
+        platform is designed to make cooking an enjoyable and collaborative experience.</p>
     </section>
-
+  
     <section id="features">
-        <h2>What Sets Us Apart</h2>
-
-        <article>
-            <h3>User-Friendly Recipe Management</h3>
-            <p>codecowboys.com allows you to seamlessly add, edit, and organize your favorite recipes. With just a few
-                clicks, you can become a culinary artist and showcase your creations to the world.</p>
-        </article>
-
-        <article>
-            <h3>Interactive Features</h3>
-            <p>Express your opinions with our interactive features! Like or dislike recipes, bookmark your favorites for
-                quick access, and even add mouth-watering pictures to make your recipes stand out.</p>
-        </article>
-
-        <article>
-            <h3>Smart Tagging System</h3>
-            <p>Navigate through our extensive recipe collection effortlessly. Our smart tagging system lets you filter
-                recipes based on factors like difficulty level, time of day, cooking time, and more. Finding the perfect
-                recipe for any occasion has never been this easy.</p>
-        </article>
+      <h2>What Sets Us Apart</h2>
+  
+      <article>
+        <h3>User-Friendly Recipe Management</h3>
+        <p>CodeCowboys.com allows you to seamlessly add, edit, and organize your favorite recipes. With just a few
+          clicks, you can become a culinary artist and showcase your creations to the world.</p>
+      </article>
+  
+      <article>
+        <h3>Interactive Features</h3>
+        <p>Express your opinions with our interactive features! Like or dislike recipes, bookmark your favorites for
+          quick access, and even add mouth-watering pictures to make your recipes stand out.</p>
+      </article>
+  
+      <article>
+        <h3>Smart Tagging System</h3>
+        <p>Navigate through our extensive recipe collection effortlessly. Our smart tagging system lets you filter
+          recipes based on factors like difficulty level, time of day, cooking time, and more. Finding the perfect
+          recipe for any occasion has never been this easy.</p>
+      </article>
     </section>
-
+  
     <section id="join">
-        <h2>Join Our Culinary Community!</h2>
-        <p>Whether you're here to share your culinary masterpieces or explore new and exciting recipes, we invite you to
-            become a part of our growing community. Connect with fellow food lovers, exchange tips, and embark on a
-            delicious journey with codecowboys.</p>
-        <p>Ready to get started? Head to the <a href="[Link to Recipes]">Recipes</a> page and let the cooking adventures
-            begin!</p>
+      <h2>Join Our Culinary Community!</h2>
+      <p>Whether you're here to share your culinary masterpieces or explore new and exciting recipes, we invite you to
+        become a part of our growing community. Connect with fellow food lovers, exchange tips, and embark on a
+        delicious journey with CodeCowboys.</p>
+      <p>Ready to get started? Head to the <a href="[Link to Recipes]">Recipes</a> page and let the cooking adventures
+        begin!</p>
     </section>
-
+  
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions, suggestions, or just want to say hi? Feel free to reach out to us at
-            <a>codecowboysgmail.com</a>.</p>
+      <h2>Contact Us</h2>
+      <p>Have questions, suggestions, or just want to say hi? Feel free to reach out to us at
+        <a>codecowboysmail.com</a>.</p>
     </section>
-
+  
     <footer>
-        <p>Happy Cooking!</p>
-        <p>code cowboys Team</p>
+      <p>Happy Cooking!</p>
+      <p>Code Cowboys Team</p>
     </footer>
-
-</body>
-
-</html>
-
+  
+  </div>
+  
+  
+  
+  
