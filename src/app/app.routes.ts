@@ -9,11 +9,13 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { SavedComponent } from './saved/saved.component';
 import { MyrecipesComponent } from './myrecipes/myrecipes.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'recipe', component: RecipeFormComponent },
+    { path: 'login', component: LoginComponent },
     {path: 'profile', component: ProfileComponent,
     children: [
         { path: 'personal', component: PersonalComponent },
