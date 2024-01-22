@@ -46,7 +46,7 @@
 
       <!-- Login & Sign up -->
       <div class="navbar-nav ms-auto">
-        <a *ngIf="!isLoggedIn" class="nav-link" href="#" (click)="login()">Login</a>
+        <a *ngIf="!isLoggedIn" class="nav-link" routerLink="/login" routerLinkActive="active" (click)="login()">Login</a>
         <span *ngIf="!isLoggedIn" style="margin: 5px 5px;">|</span>
         <a *ngIf="!isLoggedIn" class="nav-link" href="#" style="margin-right: 5px;">Sign Up</a> 
       </div>
