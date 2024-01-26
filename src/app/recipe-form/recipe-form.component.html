@@ -1,15 +1,88 @@
-<form (ngSubmit)="onSubmit()">
-    <input (input)="onInput($event)" type="text" placeholder="Recipe Name" required>
-    <textarea (input)="onTextareaInput($event)" placeholder="Recipe Description" required></textarea>
-    <select (change)="onSelectChange($event)" required>
+<!-- recipe-form.component.html -->
+
+<body class="add-recipe-container">
+    <header>
+      <h1>Add New Recipe</h1>
+    </header>
+  
+    <form #recipeForm class="add-recipe-form">
+      <label for="recipeTitle">Recipe Title:</label>
+      <input type="text" id="recipeTitle" name="recipeTitle" required>
+  
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+  
+      <label for="ingredients">Ingredients:</label>
+      <ul id="ingredientsList">
+        <li><input type="text" name="ingredients[]" required><button type="button" (click)="removeItem($event)">Remove</button></li>
+      </ul>
+      <button type="button" (click)="addItem('ingredientsList')">Add Ingredient</button>
+  
+      <label for="instructions">Instructions:</label>
+      <ol id="instructionsList">
+        <li><textarea name="instructions[]" required></textarea><button type="button" (click)="removeItem($event)">Remove</button></li>
+      </ol>
+      <button type="button" (click)="addItem('instructionsList')">Add Step</button>
+  
+      <label for="prepTime">Prep Time (minutes):</label>
+      <input type="number" id="prepTime" name="prepTime" required>
+  
+      <label for="cookingTime">Cooking Time (minutes):</label>
+      <input type="number" id="cookingTime" name="cookingTime" required>
+  
+      <label for="difficultyLevel">Difficulty Level:</label>
+      <select id="difficultyLevel" name="difficultyLevel" required>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
-    </select>
-    <button>Add Recipe</button>
-</form>
-
-<button>obama</button>
+      </select>
+  
+      <button type="button" (click)="submitRecipe()">Submit Recipe</button>
+    </form>
+  
+    <footer>
+      <p>Happy Cooking!</p>
+      <p>Your Recipe App Team</p>
+    </footer>
+  
+    <script type="module">
+      async function submitRecipe() {
+        const form = document.getElementById('recipeForm') as HTMLFormElement;
+        const formData = new FormData(form);
+  
+        try {
+          const response = await fetch('http://localhost:3000/api/add-recipe', {
+            method: 'POST',
+            body: formData,
+          });
+  
+          if (response.ok) {
+            alert('Recipe submitted successfully!');
+            // Optionally, reset the form
+            form.reset();
+          } else {
+            alert('Failed to submit recipe. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again later.');
+        }
+      }
+  
+      function addItem(listId) {
+        const list = document.getElementById(listId);
+        const newItem = document.createElement('li');
+        newItem.innerHTML = `<textarea name="${listId}[]" required></textarea><button type="button" (click)="removeItem($event)">Remove</button>`;
+        list.appendChild(newItem);
+      }
+  
+      function removeItem(event) {
+        const listItem = event.target.parentNode;
+        listItem.parentNode.removeChild(listItem);
+      }
+    </script>
+  </body>
+  
 
    
    
