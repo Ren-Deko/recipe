@@ -1,12 +1,16 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-      <h1>Register</h1>
-        <input type="text" placeholder="Username" class="form-control mt-1" [(ngModel)]="username" />
-        <input type="{{showPassword ? 'text' : 'password'}}" placeholder="Password" class="form-control mt-1" [(ngModel)]="password" />
-        <input type="text" placeholder="Email" class="form-control mt-1" [(ngModel)]="email" />
-        <button class="btn btn-primary mt-2" (click)="onSubmit()" type="submit">Register</button>
-        <button class="btn btn-dark mt-2" (click)="togglePasswordVisibility()">Show password</button>
-      </div>
-    </div>
-  </div>
+<body>
+    <form action="your_signup_script.php" method="post" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="image">Image (optional):</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <button type="submit">Sign Up</button>
+    </form>
