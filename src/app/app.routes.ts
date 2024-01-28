@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './about/about.component'; 
+import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
@@ -11,6 +11,8 @@ import { MyrecipesComponent } from './myrecipes/myrecipes.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -18,19 +20,21 @@ export const routes: Routes = [
     { path: 'recipe', component: RecipeFormComponent },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    {path: 'profile', component: ProfileComponent,
-    children: [
-        { path: 'personal', component: PersonalComponent },
-        { path: 'newsletter', component: NewsletterComponent },
-        { path: 'saved', component: SavedComponent },
-        { path: 'myrecipes', component: MyrecipesComponent },
-        { path: 'reviews', component: ReviewsComponent }
-    ]},
+    {
+        path: 'profile', component: ProfileComponent,
+        children: [
+            { path: 'personal', component: PersonalComponent },
+            { path: 'newsletter', component: NewsletterComponent },
+            { path: 'saved', component: SavedComponent },
+            { path: 'myrecipes', component: MyrecipesComponent },
+            { path: 'reviews', component: ReviewsComponent }
+        ]
+    },
 ];
 
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes), RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+    imports: [RouterModule.forRoot(routes), RouterModule.forChild(routes), HttpClientModule, ReactiveFormsModule, FormsModule],
+    exports: [RouterModule, HttpClientModule, ReactiveFormsModule, FormsModule]
+})
+export class AppRoutingModule { }

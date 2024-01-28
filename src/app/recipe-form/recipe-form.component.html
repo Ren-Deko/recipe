@@ -1,22 +1,50 @@
-<form (ngSubmit)="onSubmit()">
-    <input (input)="onInput($event)" type="text" placeholder="Recipe Name" required>
-    <textarea (input)="onTextareaInput($event)" placeholder="Recipe Description" required></textarea>
-    <select (change)="onSelectChange($event)" required>
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+<!-- recipe-form.component.html -->
+
+<body class="add-recipe-container">
+  <header>
+    <h1>Add New Recipe</h1>
+  </header>
+
+  <form #recipeForm class="add-recipe-form" id="recipeForm">
+    <label for="recipeTitle">Recipe Title:</label>
+    <input type="text" id="recipeTitle" name="recipeTitle" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+
+    <label for="ingredients">Ingredients:</label>
+    <ul id="ingredientsList">
+      <li><input type="text" name="ingredients[]" required><button type="button"
+          (click)="removeItem($event)">Remove</button></li>
+    </ul>
+    <button type="button" (click)="addItem('ingredientsList')">Add Ingredient</button>
+
+    <label for="instructions">Instructions:</label>
+    <ol id="instructionsList">
+      <li><textarea name="instructions[]" required></textarea><button type="button"
+          (click)="removeItem($event)">Remove</button></li>
+    </ol>
+    <button type="button" (click)="addItem('instructionsList')">Add Step</button>
+
+    <label for="prepTime">Prep Time (minutes):</label>
+    <input type="number" id="prepTime" name="prepTime" required>
+
+    <label for="cookingTime">Cooking Time (minutes):</label>
+    <input type="number" id="cookingTime" name="cookingTime" required>
+
+    <label for="difficultyLevel">Difficulty Level:</label>
+    <select id="difficultyLevel" name="difficultyLevel" required>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
     </select>
-    <button>Add Recipe</button>
-</form>
 
-<button>obama</button>
+    <button type="button" (click)="submitRecipe()">Submit Recipe</button>
+  </form>
 
-   
-   
-   
-   
-   
-   
-   
-   
-   
+  <footer>
+    <p>Happy Cooking!</p>
+    <p>Your Recipe App Team</p>
+  </footer>
+
+</body>
